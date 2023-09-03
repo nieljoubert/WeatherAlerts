@@ -47,34 +47,25 @@ struct NetworkingManager {
         }.resume()
     }
     
-//    func fetchImage(completion: @escaping (Result<Data, Error>) -> Void) {
-//        guard let url = URL(string: "https://picsum.photos/1000") else {
-//            completion(.failure(NetworkError.invalidURL))
-//            return
-//        }
-//        
-//        URLSession.shared.dataTask(with: url) { data, _, error in
-//                       
-//            guard let data = data, error == nil else {
-//                completion(.failure(NetworkError.noData))
-//                return
-//            }
-//            
-//            if let error = error {
-//                completion(.failure(error))
-//                return
-//            }
-//            
-//            do {
-//                let decoder = JSONDecoder()
-////                decoder.keyDecodingStrategy = .convertFromSnakeCase
-//                let response = try decoder.decode(WeatherAlertsResponse.self, from: data)
-//                completion(.success(response.alerts))
-//            } catch let decodingError as NSError {
-//                print("JSON decoding failed: \(decodingError.localizedDescription)")
-//                completion(.failure(decodingError))
-//            }
-//        }.resume()
-//    }
+    static func fetchImage(completion: @escaping (Result<Data, Error>) -> Void) {
+        guard let url = URL(string: "https://picsum.photos/1000") else {
+            completion(.failure(NetworkError.invalidURL))
+            return
+        }
+        
+        URLSession.shared.dataTask(with: url) { data, _, error in
+                       
+            guard let data = data, error == nil else {
+                completion(.failure(NetworkError.noData))
+                return
+            }
+            
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+            
+            completion(.success(data))
+        }.resume()
+    }
 }
-

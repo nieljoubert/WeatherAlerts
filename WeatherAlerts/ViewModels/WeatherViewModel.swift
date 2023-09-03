@@ -10,7 +10,6 @@ import Foundation
 class WeatherViewModel {
     
     var alerts: [Feature] = []
-    var alertImages: [String:URL] = [:]
     
     func fetchAlerts(_ completion: @escaping () -> Void) {
         

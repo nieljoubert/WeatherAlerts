@@ -35,10 +35,7 @@ extension MainTableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AlertCell", for: indexPath) as! AlertCell
-        
-        cell.setValues(for: viewModel.alerts[indexPath.row], at: indexPath.row, alertImages: viewModel.alertImages) { [weak self] images in
-            self?.viewModel.alertImages = images
-        }
+        cell.setValues(for: viewModel.alerts[indexPath.row])
         return cell
     }
     
