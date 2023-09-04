@@ -9,6 +9,7 @@ import Foundation
 
 // MARK: - WeatherAlert
 struct WeatherAlert: Codable {
+    let imageData: Data?
     let properties: Properties?
 }
 

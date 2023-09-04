@@ -47,7 +47,7 @@ struct NetworkingManager {
     }
     
     static func fetchImage(completion: @escaping (Result<Data, Error>) -> Void) {
-        guard let url = URL(string: "https://picsum.photos/1000") else {
+        guard let url = URL(string: "https://picsum.photos/60") else {
             completion(.failure(NetworkError.invalidURL))
             return
         }
