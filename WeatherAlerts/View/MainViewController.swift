@@ -36,6 +36,13 @@ extension MainTableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AlertCell", for: indexPath) as! AlertCell
         cell.setValues(for: viewModel.alerts[indexPath.row])
+        
+        cell.imageView?.loadImage(at: URL(string: "https://picsum.photos/id/\(Int.random(in: 1...1000))/60")!)
+
+        cell.onReuse = {
+            cell.imageView?.cancelImageLoad()
+        }
+        
         return cell
     }
     

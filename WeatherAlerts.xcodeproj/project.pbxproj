@@ -22,6 +22,7 @@
 		9942CC692AA0C144000EC6F8 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 9942CC682AA0C144000EC6F8 /* SDWebImage */; };
 		9942CC852AA0C8DE000EC6F8 /* AlertCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9942CC832AA0C8DE000EC6F8 /* AlertCell.swift */; };
 		9942CC862AA0C8DE000EC6F8 /* AlertCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9942CC842AA0C8DE000EC6F8 /* AlertCell.xib */; };
+		994EEB532AA5C135001D7857 /* ImageCacheLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994EEB522AA5C135001D7857 /* ImageCacheLoader.swift */; };
 		994F8A962AA1F4770045DE0C /* AlertCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994F8A952AA1F4770045DE0C /* AlertCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +64,7 @@
 		9942CC5C2AA0B67B000EC6F8 /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
 		9942CC832AA0C8DE000EC6F8 /* AlertCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertCell.swift; sourceTree = "<group>"; };
 		9942CC842AA0C8DE000EC6F8 /* AlertCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertCell.xib; sourceTree = "<group>"; };
+		994EEB522AA5C135001D7857 /* ImageCacheLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheLoader.swift; sourceTree = "<group>"; };
 		994F8A952AA1F4770045DE0C /* AlertCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -115,7 +117,7 @@
 		9942CC082AA0A99A000EC6F8 /* WeatherAlerts */ = {
 			isa = PBXGroup;
 			children = (
-				9942CC5B2AA0B615000EC6F8 /* Other */,
+				9942CC5B2AA0B615000EC6F8 /* Helpers */,
 				9942CC3C2AA0AB05000EC6F8 /* Models */,
 				9942CC3E2AA0AB2D000EC6F8 /* View */,
 				9942CC3D2AA0AB1D000EC6F8 /* ViewModels */,
@@ -182,11 +184,12 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
-		9942CC5B2AA0B615000EC6F8 /* Other */ = {
+		9942CC5B2AA0B615000EC6F8 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				994EEB522AA5C135001D7857 /* ImageCacheLoader.swift */,
 			);
-			path = Other;
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		9942CC7F2AA0C8BA000EC6F8 /* AlertCell */ = {
@@ -343,6 +346,7 @@
 				9942CC462AA0B239000EC6F8 /* WeatherAlertsResponse.swift in Sources */,
 				9942CC4E2AA0B4CB000EC6F8 /* WeatherAlert.swift in Sources */,
 				9942CC0A2AA0A99A000EC6F8 /* AppDelegate.swift in Sources */,
+				994EEB532AA5C135001D7857 /* ImageCacheLoader.swift in Sources */,
 				9942CC0C2AA0A99A000EC6F8 /* SceneDelegate.swift in Sources */,
 				9942CC5D2AA0B67B000EC6F8 /* NetworkingManager.swift in Sources */,
 			);
