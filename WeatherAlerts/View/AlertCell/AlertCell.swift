@@ -48,7 +48,7 @@ class AlertCell: UITableViewCell {
                     self?.alertImageView.image = UIImage(data: data)
                 }
             case .failure(let error):
-                // Error
+                AlertHelper.showAlert(message: error.localizedDescription)
                 break
             }
         }

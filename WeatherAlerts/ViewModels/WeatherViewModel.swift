@@ -19,7 +19,7 @@ class WeatherViewModel {
                 self.alerts = alerts.filter{ $0.properties?.end != nil }
                 return completion()
             case .failure(let error):
-                // Show error
+                AlertHelper.showAlert(message: error.localizedDescription)
                 return completion()
             }
         }
