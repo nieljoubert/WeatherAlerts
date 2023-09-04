@@ -16,7 +16,7 @@ enum NetworkError: Error {
 
 struct NetworkingManager {
      
-    static func fetchWeatherAlerts(_ completion: @escaping (Result<[Feature], Error>) -> Void) {
+    static func fetchWeatherAlerts(_ completion: @escaping (Result<[WeatherAlert], Error>) -> Void) {
         guard let url = URL(string: "https://api.weather.gov/alerts/active?status=actual&message_type=alert") else {
             completion(.failure(NetworkError.invalidURL))
             return
@@ -36,10 +36,9 @@ struct NetworkingManager {
             
             do {
                 let decoder = JSONDecoder()
-//                decoder.keyDecodingStrategy = .convertFromSnakeCase
-//                let response = try decoder.decode(WeatherAlertsResponse.self, from: data)
-                let response = try WeatherAlertsResponse(String(decoding: data, as: UTF8.self))
-                completion(.success(response.features ?? []))
+                decoder.dateDecodingStrategy = .iso8601
+                let response = try decoder.decode(WeatherAlertsResponse.self, from: data)
+                completion(.success(response.alerts ?? []))
             } catch let decodingError as NSError {
                 print("JSON decoding failed: \(decodingError.localizedDescription)")//\n\n\(String(decoding: data, as: UTF8.self))")
                 completion(.failure(decodingError))

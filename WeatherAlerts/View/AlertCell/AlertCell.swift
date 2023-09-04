@@ -18,28 +18,28 @@ class AlertCell: UITableViewCell {
     @IBOutlet private weak var sourceLabel: UILabel!
         
     // wanted to use inout for alertImages, but has an issue if AlertCell is a class and cant make it a struct
-    func setValues(for weatherAlert: Feature?) {
-        guard let alert = weatherAlert, let end = alert.properties?.ends else {
+    func setValues(for weatherAlert: WeatherAlert?) {
+        guard let alert = weatherAlert,
+              let name = alert.properties?.name,
+              let start = alert.properties?.start,
+              let end = alert.properties?.end,
+              let source = alert.properties?.source
+        else {
             return
         }
         
-//        nameLabel.text = alert?.properties?.name
-//        startLabel.text = alert?.properties?.start?.debugDescription
-//        endLabel.text = alert?.properties?.end?.debugDescription
-//        durationLabel.text = alert?.properties?.duration?.debugDescription
-//        sourceLabel.text = alert?.properties?.source
-        
-        nameLabel.text = alert.properties?.event
-        startLabel.text = formatDate((alert.properties?.effective)!)
+        nameLabel.text = name
+        startLabel.text = formatDate(start)
         endLabel.text = formatDate(end)
+        sourceLabel.text = source
         
         let formatter = DateComponentsFormatter()
         formatter.unitsStyle = .abbreviated
         formatter.zeroFormattingBehavior = .dropAll
         formatter.allowedUnits = [.day, .hour, .minute, .second]
         
-        durationLabel.text = formatter.string(from: (alert.properties?.ends)!.timeIntervalSince((alert.properties?.effective)!))
-        sourceLabel.text = alert.properties?.senderName
+        durationLabel.text = formatter.string(from: end.timeIntervalSince(start))
+        sourceLabel.text = source
         
         NetworkingManager.fetchImage { [weak self] result in
             switch result {
