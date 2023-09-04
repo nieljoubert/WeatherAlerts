@@ -29,16 +29,9 @@ class AlertCell: UITableViewCell {
         }
         
         nameLabel.text = name
-        startLabel.text = formatDate(start)
-        endLabel.text = formatDate(end)
-        sourceLabel.text = source
-        
-        let formatter = DateComponentsFormatter()
-        formatter.unitsStyle = .abbreviated
-        formatter.zeroFormattingBehavior = .dropAll
-        formatter.allowedUnits = [.day, .hour, .minute, .second]
-        
-        durationLabel.text = formatter.string(from: end.timeIntervalSince(start))
+        startLabel.text = start.formattedForDisplay()
+        endLabel.text = end.formattedForDisplay()
+        durationLabel.text = end.formatDurationToWords(from: start)
         sourceLabel.text = source
         
         NetworkingManager.fetchImage { [weak self] result in
@@ -52,11 +45,5 @@ class AlertCell: UITableViewCell {
                 break
             }
         }
-    }
-    
-    func formatDate(_ date: Date) -> String {
-        let outputDateFormatter = DateFormatter()
-        outputDateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
-        return outputDateFormatter.string(from: date)
     }
 }

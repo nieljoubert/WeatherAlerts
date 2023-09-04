@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 53;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -23,6 +23,7 @@
 		9942CC852AA0C8DE000EC6F8 /* AlertCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9942CC832AA0C8DE000EC6F8 /* AlertCell.swift */; };
 		9942CC862AA0C8DE000EC6F8 /* AlertCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9942CC842AA0C8DE000EC6F8 /* AlertCell.xib */; };
 		994EEB582AA67668001D7857 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994EEB572AA67668001D7857 /* AlertHelper.swift */; };
+		994EEB622AA67FE3001D7857 /* Date+Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994EEB612AA67FE3001D7857 /* Date+Format.swift */; };
 		994F8A962AA1F4770045DE0C /* AlertCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994F8A952AA1F4770045DE0C /* AlertCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +66,7 @@
 		9942CC832AA0C8DE000EC6F8 /* AlertCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertCell.swift; sourceTree = "<group>"; };
 		9942CC842AA0C8DE000EC6F8 /* AlertCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertCell.xib; sourceTree = "<group>"; };
 		994EEB572AA67668001D7857 /* AlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
+		994EEB612AA67FE3001D7857 /* Date+Format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Format.swift"; sourceTree = "<group>"; };
 		994F8A952AA1F4770045DE0C /* AlertCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,10 +119,11 @@
 		9942CC082AA0A99A000EC6F8 /* WeatherAlerts */ = {
 			isa = PBXGroup;
 			children = (
+				994EEB602AA67FCC001D7857 /* Extensions */,
 				994EEB562AA67636001D7857 /* Helpers */,
 				9942CC5B2AA0B615000EC6F8 /* Other */,
 				9942CC3C2AA0AB05000EC6F8 /* Models */,
-				9942CC3E2AA0AB2D000EC6F8 /* View */,
+				9942CC3E2AA0AB2D000EC6F8 /* Views */,
 				9942CC3D2AA0AB1D000EC6F8 /* ViewModels */,
 				9942CC5A2AA0B606000EC6F8 /* Managers */,
 				9942CC092AA0A99A000EC6F8 /* AppDelegate.swift */,
@@ -168,13 +171,13 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		9942CC3E2AA0AB2D000EC6F8 /* View */ = {
+		9942CC3E2AA0AB2D000EC6F8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				9942CC0D2AA0A99A000EC6F8 /* MainViewController.swift */,
 				9942CC7F2AA0C8BA000EC6F8 /* AlertCell */,
 			);
-			path = View;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		9942CC5A2AA0B606000EC6F8 /* Managers */ = {
@@ -209,6 +212,14 @@
 			);
 			name = Helpers;
 			path = Other/Helpers;
+			sourceTree = "<group>";
+		};
+		994EEB602AA67FCC001D7857 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				994EEB612AA67FE3001D7857 /* Date+Format.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,8 +287,9 @@
 		9942CBFE2AA0A999000EC6F8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1240;
-				LastUpgradeCheck = 1240;
+				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					9942CC052AA0A99A000EC6F8 = {
 						CreatedOnToolsVersion = 12.4;
@@ -354,6 +366,7 @@
 				994F8A962AA1F4770045DE0C /* AlertCellViewModel.swift in Sources */,
 				9942CC852AA0C8DE000EC6F8 /* AlertCell.swift in Sources */,
 				9942CC462AA0B239000EC6F8 /* WeatherAlertsResponse.swift in Sources */,
+				994EEB622AA67FE3001D7857 /* Date+Format.swift in Sources */,
 				9942CC4E2AA0B4CB000EC6F8 /* WeatherAlert.swift in Sources */,
 				9942CC0A2AA0A99A000EC6F8 /* AppDelegate.swift in Sources */,
 				9942CC0C2AA0A99A000EC6F8 /* SceneDelegate.swift in Sources */,
@@ -463,7 +476,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -518,7 +531,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -535,6 +548,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = WeatherAlerts/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -553,6 +567,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = WeatherAlerts/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

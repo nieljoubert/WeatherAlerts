@@ -40,7 +40,7 @@ struct NetworkingManager {
                 let response = try decoder.decode(WeatherAlertsResponse.self, from: data)
                 completion(.success(response.alerts ?? []))
             } catch let decodingError as NSError {
-                print("JSON decoding failed: \(decodingError.localizedDescription)")//\n\n\(String(decoding: data, as: UTF8.self))")
+                print("JSON decoding failed: \(decodingError.localizedDescription)")
                 completion(.failure(decodingError))
             }
         }.resume()
