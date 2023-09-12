@@ -34,6 +34,8 @@ struct AlertHelper {
             alertController.addAction(action)
         }
         
-        viewController.present(alertController, animated: true, completion: nil)
+        DispatchQueue.main.async {
+            viewController.present(alertController, animated: true, completion: nil)
+        }
     }
 }
